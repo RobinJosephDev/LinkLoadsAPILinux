@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['https://adminuilinux.onrender.com'],
+    'allowed_origins' => ['https://adminuilinux.onrender.com/api'],
 
     'allowed_origins_patterns' => [],
 
