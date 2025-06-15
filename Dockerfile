@@ -33,5 +33,7 @@ RUN cp .env.example .env \
 # Expose port
 EXPOSE 8080
 
+RUN ln -sf /dev/stdout /var/www/storage/logs/laravel.log
+
 # Run Laravel's built-in server
 CMD php artisan serve --host=0.0.0.0 --port=8080

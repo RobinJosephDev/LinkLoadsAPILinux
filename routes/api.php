@@ -26,6 +26,11 @@ Route::post('login', [AuthController::class, 'login'])->middleware('throttle:log
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/sanctum/csrf-cookie', [CsrfCookieController::class, 'show']);
 
+Route::get('/', function () {
+    return response()->json(['message' => 'API is running!'], 200);
+});
+
+
 // Authenticated routes (must be logged in with Sanctum token)
 Route::middleware('auth:sanctum')->group(function () {
 
