@@ -29,6 +29,7 @@ RUN cp .env.example .env \
     && php artisan route:clear \
     && php artisan view:clear \
     && chown -R www-data:www-data /var/www
+RUN chmod -R 775 /var/www/storage
 
 # Expose port
 EXPOSE 8080

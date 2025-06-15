@@ -30,6 +30,10 @@ Route::get('/', function () {
     return response()->json(['message' => 'API is running!'], 200);
 });
 
+Route::get('/test-crash', function () {
+    throw new Exception("Deliberate crash for debugging");
+});
+
 
 // Authenticated routes (must be logged in with Sanctum token)
 Route::middleware('auth:sanctum')->group(function () {
