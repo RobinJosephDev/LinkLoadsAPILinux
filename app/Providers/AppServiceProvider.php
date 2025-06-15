@@ -14,6 +14,7 @@ use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 use Psr\Http\Client\ClientInterface;
+use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -51,6 +52,10 @@ class AppServiceProvider extends ServiceProvider
             if (!Type::hasType('enum')) {
                 Type::addType('enum', EnumType::class);
             }
+        }
+
+        if (env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
         }
     }
 }
